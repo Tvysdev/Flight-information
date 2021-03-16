@@ -2,22 +2,21 @@ package com.gridnine.testing.filter;
 
 import com.gridnine.testing.model.Flight;
 import com.gridnine.testing.model.Segment;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
+import org.junit.Before;
+import org.junit.Test;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
-class IdleLessThen2HoursFilterTest {
+public class IdleLessThen2HoursFilterTest {
     Filter idleLessThen2HoursFilter;
     private final LocalDateTime DATE_TIME = LocalDateTime.now();
     private List<Flight> flights;
     private List<Flight> expected;
 
-    @BeforeEach
+    @Before
     public void init() {
         idleLessThen2HoursFilter = new IdleLessThen2HoursFilter();
         flights = List.of(
